@@ -12,10 +12,15 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector2 direccion;
 
     bool isJumping;
+    bool puedeMover;
 
     private Rigidbody2D rb2D;
     private SpriteRenderer sprite;
-    private Vector3 scaleChange = new Vector3(-0.07f, -0.07f, -0.07f);
+    private Vector3 scaleChange = new Vector3(-0.05f, -0.05f, -0.05f);
+
+    private float minHeight = 0.15f;
+    private float maxHeight = 0.4f;
+
     //public Animator animacion;
 
     private void Start() {
@@ -65,7 +70,7 @@ public class Player : MonoBehaviour
         // Movimiento derecha
         if (Input.GetKey("d") || Input.GetKey("right")) {
             rb2D.velocity = new Vector2(velocidad, rb2D.velocity.y);
-            sprite.flipX = false;
+            sprite.flipX = true;
             //animator.SetBool("Run", true);
 
         } else {
@@ -73,7 +78,7 @@ public class Player : MonoBehaviour
             // Movimiento izquierda
             if (Input.GetKey("a") || Input.GetKey("left")) {
                 rb2D.velocity = new Vector2(-velocidad, rb2D.velocity.y);
-                sprite.flipX = true;
+                sprite.flipX = false;
                 //animator.SetBool("Run", true);
 
                 // Parado
@@ -96,17 +101,31 @@ public class Player : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Crecer")) {
-            Debug.Log("Agua");
-            Destroy(collision.gameObject);
+        if (collision.gameObject.CompareTag("Crecer") && (rb2D.transform.localScale.x < maxHeight)) {
+            //Debug.Log("Yo: " + rb2D.transform.localScale.x + " Max: " + maxHeight);
             rb2D.transform.localScale -= scaleChange;
         }
 
-        if (collision.gameObject.CompareTag("Decrecer")) {
-            Debug.Log("Fuego");
-            //Destroy(collision.gameObject);
+        if (collision.gameObject.CompareTag("Decrecer") && (rb2D.transform.localScale.x > minHeight)) {
+            //Debug.Log("Yo: " + rb2D.transform.localScale.x + " Min: " + minHeight);
             rb2D.transform.localScale += scaleChange;
         }
+    }
+
+    public bool PuedeMoverRoca() {
+        puedeMover = false;
+        Debug.Log(rb2D.transform.localScale.x);
+        if (rb2D.transform.localScale.x > 0.35) {
+            puedeMover = true;
+            Debug.Log("puede");
+        } else {
+            Debug.Log("noPuede");
+        }
+        return puedeMover;
+    }
+
+    public void Ganar() {
+    
     }
 
 }

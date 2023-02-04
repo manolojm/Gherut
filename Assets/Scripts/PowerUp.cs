@@ -14,7 +14,7 @@ public class PowerUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tiempoAleatorio = Random.Range(0, 3);
+        tiempoAleatorio = Random.Range(2, 3);
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class PowerUp : MonoBehaviour
         tiempoAleatorio -= Time.deltaTime;
         if (tiempoAleatorio <= 0) {
             CrearGota();
-            tiempoAleatorio = Random.Range(0, 3);
+            tiempoAleatorio = Random.Range(2, 3);
         }
     }
 

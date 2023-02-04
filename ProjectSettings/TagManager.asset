@@ -8,6 +8,7 @@ TagManager:
   - Crecer
   - Decrecer
   - Jugador
+  - Victoria
   layers:
   - Default
   - TransparentFX

@@ -124,8 +124,5 @@ public class Player : MonoBehaviour
         return puedeMover;
     }
 
-    public void Ganar() {
-    
-    }
 
 }

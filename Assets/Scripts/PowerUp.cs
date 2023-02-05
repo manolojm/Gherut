@@ -29,7 +29,6 @@ public class PowerUp : MonoBehaviour
     }
 
     private void CrearGota() {
-        //Vector3 posicionEnemigo = new Vector3(Random.Range(-5, 5), Random.Range(3, 4), Random.Range(3, 8));
         Vector3 posicionEnemigo = spawnPoint.transform.position;
         var nuevaGota = Instantiate(gota, posicionEnemigo, Quaternion.identity);
     }

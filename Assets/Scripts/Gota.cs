@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Gota : MonoBehaviour
 {
+    public AudioSource audioGota;
+
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.transform.tag == "Suelo" || collision.transform.tag == "Jugador") {
-
+            //Instantiate(audioGota);
             Debug.Log("La gota caído al suelo");
-            //Instantiate(explosion, collision.transform.position, collision.transform.rotation);
             Destroy(gameObject);
-            //Destroy(animExplosion, 1);
         }
     }
 }

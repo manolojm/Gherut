@@ -21,6 +21,7 @@ public class ControlBotones : MonoBehaviour {
     }
 
     public void OnMenu() {
+        Debug.Log("volver menyu");
         SceneManager.LoadScene("MenuScene");
     }
 

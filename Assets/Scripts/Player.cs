@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb2D;
     private SpriteRenderer sprite;
+    private Animator animator;
     private Vector3 scaleChange = new Vector3(-0.05f, -0.05f, -0.05f);
 
     private float minHeight = 0.15f;
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
     private void Start() {
         rb2D = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     void Update() {
@@ -109,6 +111,10 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Decrecer") && (rb2D.transform.localScale.x > minHeight)) {
             //Debug.Log("Yo: " + rb2D.transform.localScale.x + " Min: " + minHeight);
             rb2D.transform.localScale += scaleChange;
+        }
+
+        if (collision.gameObject.CompareTag("Escalera")) {
+            animator.SetBool("Subir", true);
         }
     }
 

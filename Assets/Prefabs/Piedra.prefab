@@ -100,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.050424576, y: -0.033616304}
+  m_Offset: {x: -0.050424576, y: -0.018613577}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.6351433, y: 4.1437516}
+  m_Size: {x: 3.6351433, y: 4.173757}
   m_EdgeRadius: 0
 --- !u!50 &1412904548039647216
 Rigidbody2D:
@@ -146,3 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f9223ca94451a4f95ab45596a7f9fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioRoca: {fileID: 0}

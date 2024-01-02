@@ -22,7 +22,7 @@ public class Escalera : MonoBehaviour
         
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision) {
+    private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Jugador") && ejecutado == false) {
             Debug.Log("Escalera");
             Invoke("Topo1", 1f);
@@ -37,7 +37,7 @@ public class Escalera : MonoBehaviour
             Invoke("Paso4", 10f);
             ejecutado = true;
         }
-    }*/
+    }
 
     private void Topo1() {
         manosTopo.SetActive(true);
@@ -68,5 +68,9 @@ public class Escalera : MonoBehaviour
     
     private void Paso4() {
         escalera4.SetActive(true);
+    }
+
+    private void Ganar() {
+        SceneManager.LoadScene("VictoryScene");
     }
 }

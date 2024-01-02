@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ControlBotones : MonoBehaviour {
+
+    public AudioSource audioEntrada;
+
+    private void Start() {
+        Instantiate(audioEntrada);
+    }
     public void OnJugar() {
         SceneManager.LoadScene("GameScene");
     }
@@ -21,7 +27,6 @@ public class ControlBotones : MonoBehaviour {
     }
 
     public void OnMenu() {
-        Debug.Log("volver menyu");
         SceneManager.LoadScene("MenuScene");
     }
 

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -22,12 +21,16 @@ public class Player : MonoBehaviour
     private float minHeight = 0.15f;
     private float maxHeight = 0.4f;
 
+    public AudioSource audioJuego;
+
     //public Animator animacion;
 
     private void Start() {
         rb2D = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        Instantiate(audioJuego);
     }
 
     void Update() {
